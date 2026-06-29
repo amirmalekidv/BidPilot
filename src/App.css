@@ -1,0 +1,266 @@
+.app {
+  display: flex;
+  flex-direction: column;
+  min-height: 100svh;
+  padding: 1.5rem;
+  gap: 1.5rem;
+}
+
+.app-header {
+  text-align: center;
+  padding-bottom: 0.5rem;
+  border-bottom: 1px solid var(--border);
+}
+
+.app-header h1 {
+  font-size: 2rem;
+  margin: 0 0 0.25rem;
+  color: var(--text-h);
+}
+
+.subtitle {
+  margin: 0;
+  color: var(--text-muted);
+  font-size: 0.95rem;
+}
+
+.app-main {
+  display: flex;
+  flex-direction: column;
+  gap: 1.25rem;
+  max-width: 800px;
+  width: 100%;
+  margin: 0 auto;
+}
+
+.input-card,
+.result-card,
+.confirm-card {
+  background: var(--surface);
+  border: 1px solid var(--border);
+  border-radius: 12px;
+  padding: 1.25rem;
+}
+
+.input-card label {
+  display: block;
+  font-weight: 600;
+  margin-bottom: 0.5rem;
+  color: var(--text-h);
+}
+
+.input-card textarea {
+  width: 100%;
+  box-sizing: border-box;
+  padding: 0.75rem;
+  border: 1px solid var(--border);
+  border-radius: 8px;
+  font-family: inherit;
+  font-size: 0.95rem;
+  line-height: 1.6;
+  resize: vertical;
+  background: var(--bg);
+  color: var(--text-h);
+  direction: rtl;
+}
+
+.input-card textarea:focus {
+  outline: 2px solid var(--accent);
+  border-color: var(--accent);
+}
+
+.input-card textarea:disabled {
+  opacity: 0.6;
+}
+
+.actions {
+  display: flex;
+  gap: 0.75rem;
+  margin-top: 1rem;
+  flex-wrap: wrap;
+}
+
+.btn {
+  padding: 0.6rem 1.25rem;
+  border-radius: 8px;
+  border: none;
+  font-family: inherit;
+  font-size: 0.95rem;
+  font-weight: 600;
+  cursor: pointer;
+  transition: opacity 0.15s;
+}
+
+.btn:disabled {
+  opacity: 0.5;
+  cursor: not-allowed;
+}
+
+.btn-primary {
+  background: var(--accent);
+  color: #fff;
+}
+
+.btn-primary:hover:not(:disabled) {
+  opacity: 0.9;
+}
+
+.btn-secondary {
+  background: transparent;
+  color: var(--text-h);
+  border: 1px solid var(--border);
+}
+
+.btn-secondary:hover:not(:disabled) {
+  background: var(--surface-hover);
+}
+
+.result-header {
+  display: flex;
+  align-items: center;
+  gap: 0.75rem;
+  margin-bottom: 0.75rem;
+  flex-wrap: wrap;
+}
+
+.result-header h2 {
+  margin: 0;
+  font-size: 1.1rem;
+  flex: 1;
+}
+
+.score-badge {
+  padding: 0.25rem 0.6rem;
+  border-radius: 999px;
+  font-size: 0.85rem;
+  font-weight: 700;
+  background: var(--accent-bg);
+  color: var(--accent);
+}
+
+.score-badge.score-1,
+.score-badge.score-2,
+.score-badge.score-3 {
+  background: #fee2e2;
+  color: #b91c1c;
+}
+
+.score-badge.score-4,
+.score-badge.score-5 {
+  background: #fef3c7;
+  color: #b45309;
+}
+
+.score-badge.score-6,
+.score-badge.score-7 {
+  background: #dbeafe;
+  color: #1d4ed8;
+}
+
+.score-badge.score-8,
+.score-badge.score-9,
+.score-badge.score-10 {
+  background: #d1fae5;
+  color: #047857;
+}
+
+.result-body {
+  margin: 0;
+  white-space: pre-wrap;
+  word-break: break-word;
+  font-family: inherit;
+  font-size: 0.92rem;
+  line-height: 1.75;
+  color: var(--text-h);
+  direction: rtl;
+  text-align: right;
+}
+
+.english-text {
+  direction: ltr;
+  text-align: left;
+  display: block;
+}
+
+.copy-btn {
+  padding: 0.35rem 0.75rem;
+  border-radius: 6px;
+  border: 1px solid var(--border);
+  background: var(--bg);
+  color: var(--text-h);
+  font-family: inherit;
+  font-size: 0.8rem;
+  cursor: pointer;
+}
+
+.copy-btn:hover {
+  background: var(--surface-hover);
+}
+
+.loading-block {
+  display: flex;
+  align-items: center;
+  gap: 0.75rem;
+  padding: 1rem 1.25rem;
+  background: var(--surface);
+  border: 1px solid var(--border);
+  border-radius: 12px;
+  color: var(--text-muted);
+}
+
+.spinner {
+  width: 22px;
+  height: 22px;
+  border: 3px solid var(--border);
+  border-top-color: var(--accent);
+  border-radius: 50%;
+  animation: spin 0.7s linear infinite;
+  flex-shrink: 0;
+}
+
+@keyframes spin {
+  to {
+    transform: rotate(360deg);
+  }
+}
+
+.confirm-card {
+  text-align: center;
+}
+
+.confirm-card p {
+  font-size: 1.05rem;
+  font-weight: 600;
+  margin: 0 0 1rem;
+  color: var(--text-h);
+}
+
+.confirm-card .actions {
+  justify-content: center;
+  margin-top: 0;
+}
+
+.error-box {
+  padding: 0.75rem 1rem;
+  background: #fee2e2;
+  color: #b91c1c;
+  border-radius: 8px;
+  font-size: 0.9rem;
+  text-align: right;
+}
+
+.app-footer {
+  text-align: center;
+  margin-top: auto;
+  padding-top: 1rem;
+  border-top: 1px solid var(--border);
+  color: var(--text-muted);
+  font-size: 0.85rem;
+}
+
+.app-footer code {
+  background: var(--surface);
+  padding: 0.15rem 0.4rem;
+  border-radius: 4px;
+  font-size: 0.8rem;
+}

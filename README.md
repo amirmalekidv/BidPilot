@@ -1,16 +1,32 @@
-# React + Vite
+# BidPilot
 
-This template provides a minimal setup to get React working in Vite with HMR and some Oxlint rules.
+دستیار هوشمند بید برای Freelancer.com — رابط فارسی RTL با خروجی تحلیل و استراتژی به فارسی و پروپوزال به انگلیسی.
 
-Currently, two official plugins are available:
+## راه‌اندازی
 
-- [@vitejs/plugin-react](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react) uses [Oxc](https://oxc.rs)
-- [@vitejs/plugin-react-swc](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react-swc) uses [SWC](https://swc.rs/)
+```bash
+npm install
+cp .env.example .env
+# کلید API و مدل را در .env تنظیم کنید
+npm run dev
+```
 
-## React Compiler
+## تنظیمات
 
-The React Compiler is not enabled on this template because of its impact on dev & build performances. To add it, see [this documentation](https://react.dev/learn/react-compiler/installation).
+| فایل | توضیح |
+|------|--------|
+| `.env` | `VITE_OPENAI_API_KEY` و `VITE_MODEL` |
+| `src/config/api.js` | مقادیر پیش‌فرض API (از env خوانده می‌شود) |
+| `src/config/prompts.js` | سه پرامپت قابل ویرایش |
 
-## Expanding the Oxlint configuration
+## جریان کار
 
-If you are developing a production application, we recommend using TypeScript with type-aware lint rules enabled. Check out the [TS template](https://github.com/vitejs/vite/tree/main/packages/create-vite/template-react-ts) for information on how to integrate TypeScript and Oxlint's TypeScript related rules in your project.
+1. paste توضیحات پروژه
+2. تحلیل پروژه (فارسی + نمره ۱–۱۰)
+3. استراتژی بید (فارسی)
+4. تأیید نوشتن پروپوزال
+5. پروپوزال انگلیسی با دکمه کپی
+
+## نکته امنیتی
+
+کلید API از طریق proxy سرور Vite به OpenAI ارسال می‌شود و در مرورگر expose نمی‌شود. فایل `.env` در gitignore است.
