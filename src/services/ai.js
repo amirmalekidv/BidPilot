@@ -20,7 +20,14 @@ export async function callAI(systemPrompt, userMessage) {
 
   if (!response.ok) {
     const errorBody = await response.text()
-    throw new Error(`خطای API: ${response.status} — ${errorBody}`)
+    try {
+      const parsed = JSON.parse(errorBody)
+      const message = parsed.error?.message || errorBody
+      throw new Error(`خطای API: ${message}`)
+    } catch (parseError) {
+      if (parseError.message?.startsWith('خطای API:')) throw parseError
+      throw new Error(`خطای API: ${response.status} — ${errorBody}`)
+    }
   }
 
   const data = await response.json()

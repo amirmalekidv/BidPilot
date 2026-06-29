@@ -15,7 +15,7 @@ npm run dev
 
 | فایل | توضیح |
 |------|--------|
-| `.env` | `VITE_OPENAI_API_KEY` و `VITE_MODEL` |
+| `.env` | `VITE_API_PROVIDER` (`openai` یا `deepseek`)، کلید API، و `VITE_MODEL` |
 | `src/config/api.js` | مقادیر پیش‌فرض API (از env خوانده می‌شود) |
 | `src/config/prompts.js` | سه پرامپت قابل ویرایش |
 
